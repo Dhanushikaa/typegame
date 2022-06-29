@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <br> <br>
+    <h1 style="text-align:center;color:blue"> SPEED TYPING GAME</h1>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            background-color:blue ;
+            color: white;
+            padding:15px ;
+            cursor: pointer;
+            font-size: large;
+            border: none;
+            outline: none;
+            margin-left: auto;
+            margin-right: auto;
+            display: block ;
+        }
+        input{
+            padding: 15px;
+            font-size: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right:auto;
+
+        }
+        #main-heading{
+            text-align: center;
+        }
+        #stats {
+            margin-left: auto;
+            margin-right: auto;
+            width:fit-content;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <article id="stats">
+            <p> SCORE : <span id="score-display"> </span></p>
+            <p> TIME LEFT : <span id="time-display"> </span></p>
+        </article>
+    </header>
+    <main>
+        <section id="main-section">
+            <article id="main-content"></article>
+            <button id="button">START GAME</button> <br><br>
+            <article id="text-display"></article>
+            <form id="form">
+                <input type="text" id="input">
+            </form>
+        </section>
+    </main>
+    <script src"./words.js"></script>
+    <script>
+        const startbutton = document.getElementById('button');
+        const stats = document.getElementById('stats');
+        const input = document.getElementById('input');
+        const splittedwords= words.split(" ");
+
+        function randomword(){
+            return splittedwords[Math.floor(Math.random() * splittedwords.length)]
+        }
+        console.log(randomword())
+        startbutton.addEventListener('click', function(event){
+            event.preventDefault();
+            startbutton.className='hide';
+            stats.className='';
+            input.className='';
+            
+        })
+    </script>
+</body>
+</html>
